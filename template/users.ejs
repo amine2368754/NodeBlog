@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table,tr,td,th{
+            border: solid 1px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+          <th>Name</th>
+          <th>age</th>
+          <th>Actions</th>
+        </tr>
+        <% products.forEach(function(product) { %>
+        <tr>
+          <td><a href="user/<%= product._id %>"><%= product.name %></td></a>
+          <td><%= product.age %></td>
+          <td>
+            <form action="/update" method="put">
+                <input type="hidden" name="id" value="<%= product._id %>">
+                <input type="submit" value="Update">
+            </form>
+            <form action="/delete" method="post">
+                <input type="hidden" name="id" value="<%= product._id %>">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
+        </tr>
+        <% }); %>
+      </table>
+<br><br>
+<a href="home">reteur</a>
+</body>
+</html>
+
+
+  

@@ -4,12 +4,21 @@ mongoose.set('strictQuery', true);
 mongoose.connect('mongodb://127.0.0.1:27017/myBlog', {useNewUrlParser: true});
 
 
-const userSchema = new mongoose.Schema({
-    name: String,
-    age: Number
-  });
-  const User = mongoose.model('firstCollec', userSchema);
-  
-  const user = new User({ name: 'Tantan', age: 22 });
-  user.save();
-  
+
+/* // Define the user schema
+const UserSchema = new mongoose.Schema({
+  name: String,
+  age: Number
+});
+
+// Compile the schema into a model
+const User = mongoose.model('users', UserSchema);
+
+// Find all users and print them
+User.find({}, (err, users) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(users);
+  }
+}); */
